@@ -59,8 +59,10 @@ def save_file(items, path):
 
 # основний скрипт для роботи
 def parse():
-    URL = input('Введіть адресу URL: ')
-    URL = URL.strip()
+    MARKA = input('Введіть марку авто')
+    URL = f'https://auto.ria.com/uk/newauto/marka-{MARKA}/'
+    #URL = input('Введіть адресу URL: ')
+    #URL = URL.strip()
     html = get_html(URL)
     if html.status_code == 200:
         cars = []
